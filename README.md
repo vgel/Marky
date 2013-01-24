@@ -22,8 +22,6 @@ Whereas a step of 2 would pair it to:
 
     (a, c), (b, d), (c, e)
 
-(notice it drops d since it can't pair with anything)
-
 If the sign is negative, the pairing goes backwards. This is useful for generating from an end word (see the poetry example)  
 A step of -1 would produce
 
@@ -33,9 +31,8 @@ And -2 would produce
 
     (e, c), (d, b), (c, a)
 
-
-After you have the chain, you can use marky.take(chain, n) to take n generated words. This is based on the itertools.take recipe,  
-as a MarkovChain instance is also an iterator. If you need to pass more options (check the code for them), you can use the full-featured  
+After you have the chain, you can use `marky.take(chain, n)` to take `n` generated words. This is based on the itertools.take recipe,  
+as a `MarkovChain` instance is also an iterator. If you need to pass more options (check the code for them), you can use the full-featured  
 get_word method instead of next().
 
 The full simple example code is:
@@ -44,6 +41,6 @@ The full simple example code is:
     chain = marky.chain(1, marky.fix_passage_punc(marky.word_tokenize(text)))
     print ' '.join(take(chain, 100))
 
-Note: word_tokenize requires [nltk][1], a python library for NLP.
+Note: `word_tokenize` requires [nltk][1], a python library for NLP.
 
 [1]: http://nltk.org/
